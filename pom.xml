@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<groupId>tech.pjw6193</groupId>
+	<artifactId>auto-ci</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+
+	<!-- Example POM to show Usage of Tomcat Maven Plugin
+		http://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/usage.html		
+	  -->
+	<build>
+		<finalName>auto-ci</finalName>
+		<pluginManagement>
+			<plugins>
+				<!-- Tomcat Maven Plugin  -->
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.0</version>
+					<configuration>
+						<!-- manager-script URL -->
+						<url>http://localhost:8080/manager/text</url>
+						<!-- overwrites the war if exists  -->
+						<update>true</update>
+						<!-- refers to <server> credentials configured in maven settings.xml 
+							which refers to credentials in the tomcat-users.xml -->
+						<server>maven</server>
+						<!-- what path to deploy to tomcat, then would be 
+							available at your.aws.ip:8080/example  -->
+						<path>/example</path>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
