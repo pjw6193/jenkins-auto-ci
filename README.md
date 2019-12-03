@@ -2,7 +2,7 @@
 Shell script to automatically download and install all required tools to kickstart a basic CI pipeline
 
 ## Basic Setup
-Clone this repository using `git clone https://github.com/pjw6193/jenkins-ci-linux.git`.
+Clone this repository using `git clone https://github.com/pjw6193/jenkins-auto-ci.git`.
 Give run permissions to this file with: `chmod 111 auto-ci.sh`
 Run the script with `sh auto-ci.sh`
 
